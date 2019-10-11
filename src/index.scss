@@ -1,0 +1,61 @@
+@import "node_modules/bulmaswatch/cosmo/bulmaswatch";
+
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.card {
+  position: relative;
+  height: 62rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: space-between;
+  &__bottom {
+    display: flex;
+    order: 1;
+    flex: 0 0 100%;
+    position: absolute;
+    bottom: 5rem;
+  }
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
