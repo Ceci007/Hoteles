@@ -1,14 +1,32 @@
 import React, { Component } from "react";
 import Hero from "./components/hero";
 import Hotels from "./components/hotels";
+import Filters from "./components/filters";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    const today = new Date();
+
     this.state = {
-      hotels: ""
+      filters: {
+        dateFrom: today,
+        dateTo: new Date(today.valueOf() + 86400000), // 12 * 30 * 24 * 10.000
+        country: undefined,
+        price: undefined,
+        rooms: undefined
+      },
+      hotels: []
     };
+
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+
+  handleFilterChange(payload) {
+    this.setState({
+      filters: payload
+    });
   }
 
   async componentDidMount() {
@@ -27,11 +45,23 @@ class App extends Component {
   }
 
   render() {
-    const { hotels } = this.state;
+    let { hotels, filters } = this.state;
+    hotels = hotels.filter(
+      hotel =>
+        filters.dateFrom <= hotel.availabilityFrom &&
+        filters.dateTo <= hotel.availabilityTo &&
+        (filters.country ? hotel.country === filters.country : true) &&
+        (filters.price ? hotel.price <= filters.price : true) &&
+        (filters.rooms ? hotel.rooms <= filters.rooms : true)
+    );
 
     return (
       <div>
-        <Hero totalHotels={hotels.length} />
+        <Hero totalHotels={hotels.length} filters={filters} />
+        <Filters
+          filters={this.state.filters}
+          onFilterChange={this.handleFilterChange}
+        />
         <Hotels>{hotels}</Hotels>
       </div>
     );
