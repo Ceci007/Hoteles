@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Hoteles/static/css/main.f0ebed24.chunk.css",
+    "main.js": "/Hoteles/static/js/main.172ecafc.chunk.js",
+    "main.js.map": "/Hoteles/static/js/main.172ecafc.chunk.js.map",
+    "runtime-main.js": "/Hoteles/static/js/runtime-main.bf9c27a9.js",
+    "runtime-main.js.map": "/Hoteles/static/js/runtime-main.bf9c27a9.js.map",
+    "static/js/2.3d866234.chunk.js": "/Hoteles/static/js/2.3d866234.chunk.js",
+    "static/js/2.3d866234.chunk.js.map": "/Hoteles/static/js/2.3d866234.chunk.js.map",
+    "index.html": "/Hoteles/index.html",
+    "precache-manifest.a8dc4617fe0aa618bb448acd96002f20.js": "/Hoteles/precache-manifest.a8dc4617fe0aa618bb448acd96002f20.js",
+    "service-worker.js": "/Hoteles/service-worker.js",
+    "static/css/main.f0ebed24.chunk.css.map": "/Hoteles/static/css/main.f0ebed24.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf9c27a9.js",
+    "static/js/2.3d866234.chunk.js",
+    "static/css/main.f0ebed24.chunk.css",
+    "static/js/main.172ecafc.chunk.js"
+  ]
+}
